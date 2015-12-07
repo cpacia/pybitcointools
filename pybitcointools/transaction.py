@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import binascii, re, json, copy, sys
-from bitcoin.main import *
+from pybitcointools.main import *
 from _functools import reduce
 
 ### Hex to bin converter and vice versa for objects
@@ -169,7 +169,7 @@ def der_decode_sig(sig):
 
 def is_bip66(sig):
     """Checks hex DER sig for BIP66 consistency"""
-    #https://raw.githubusercontent.com/bitcoin/bips/master/bip-0066.mediawiki
+    #https://raw.githubusercontent.com/pybitcointools/bips/master/bip-0066.mediawiki
     #0x30  [total-len]  0x02  [R-len]  [R]  0x02  [S-len]  [S]  [sighash]
     sig = bytearray.fromhex(sig) if re.match('^[0-9a-fA-F]*$', sig) else bytearray(sig)
     if (sig[0] == 0x30) and (sig[1] == len(sig)-2):     # check if sighash is missing

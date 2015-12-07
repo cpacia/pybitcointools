@@ -3,8 +3,8 @@ import os
 import random
 import unittest
 
-import bitcoin.ripemd as ripemd
-from bitcoin import *
+import pybitcointools.ripemd as ripemd
+from pybitcointools import *
 
 
 class TestECCArithmetic(unittest.TestCase):
@@ -237,7 +237,7 @@ class TestDeterministicGenerate(unittest.TestCase):
 
 
 class TestBIP0032(unittest.TestCase):
-    """See: https://en.bitcoin.it/wiki/BIP_0032"""
+    """See: https://en.pybitcointools.it/wiki/BIP_0032"""
     @classmethod
     def setUpClass(cls):
         print("Beginning BIP0032 tests")
